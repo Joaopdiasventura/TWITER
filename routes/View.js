@@ -123,7 +123,7 @@ view.get("/edit/postagem/:slug", (req, res) => {
 
 view.get("/edit/categoria/:slug", (req, res) => {
     Categoria.findOne({slug: req.params.slug}).then((categoria) => {
-        res.render("editcategorias", {categoria: categoria})
+        res.render("editcategorias", {categoria: categoria, user: req.user})
     })
 })
 

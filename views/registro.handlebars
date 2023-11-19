@@ -1,0 +1,36 @@
+{{#each erros}}
+  <div class="alert alert-danger">
+    {{texto}} 
+  </div>
+{{/each}}
+
+    <div class="card">
+        <div class="card-body">
+            <h3>FAÇA O SEU CADASTRO PARA VER TODAS AS POSTAGENS:</h3> <br>
+            {{#unless correto}}
+            {{#unless enviado}}
+            <form action="/enviar" method="post">
+              <input type="email" id="email" name="email" class="form-control" placeholder="DIGITE SEU E-MAIL" required> <br>
+              <button class="btn btn-success">ENVIAR CÓDIGO DE VERIFICAÇÃO</button> <br>
+            </form>
+            {{/unless}}
+            {{/unless}}
+            {{#unless correto}}
+            {{#if enviado}}
+            <form action="/conferir" method="post">
+              <input type="number" id="codigo" name="codigo" class="form-control" placeholder="CÓDIGO DE VERIFICAÇÃO" required> <br>
+              <button class="btn btn-success">VERIFICAR CÓDIGO</button> <br>
+            </form>
+            {{/if}}
+            {{/unless}}
+            {{#if correto}}
+            <form action="/registro" method="post">
+            <input type="text" id="name" name="name" class="form-control" placeholder="DIGITE SEU NOME " required> <br>
+            <input type="email" id="email" name="email" class="form-control" placeholder="DIGITE SEU E-MAIL" required> <br>
+            <input type="password" id="senha" name="senha" class="form-control" placeholder="DIGITE SUA SENHA" required> <br>
+            <input type="password" id="senha2" name="senha2" class="form-control" placeholder="REPITA SUA SENHA" required> <br>
+            <button class="btn btn-success">CADASTRAR CONTA</button>
+            </form>
+            {{/if}}
+        </div>
+    </div>

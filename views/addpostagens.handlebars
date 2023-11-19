@@ -1,0 +1,35 @@
+{{#if user}}
+{{#if user.eAdm}}
+{{#if erro}}
+
+<div class="alert alert-danger">
+    {{erro}}
+</div>
+
+{{/if}}
+
+<h3>NOVA POSTAGEM:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/postagens" method="post">
+
+            <label for="name">NOME DA POSTAGEM:</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+            <label for="slug">SLUG DA POSTAGEM:</label>
+            <input type="text" name="slug" id="slug" class="form-control" required> <br>
+            <label for="conteudo">CONTEUDO DA POSTAGEM:</label>
+            <textarea name="conteudo" id="conteudo" class="form-control" required></textarea>
+            <label for="categoria">CATEGORIA DA POSTAGEM:</label>
+            <select name="categoria" id="categoria" class="custom-select" required>
+                {{#each categorias}}
+                    <option value="{{_id}}">{{name}}</option>
+                    {{else}}
+                    <option value="0">NENHUMA CATEGORIA REGISTRADA</option>
+                {{/each}}
+            </select>
+            <button type="submit" class="btn btn-success mt-3">ADICIONAR</button>
+        </form>
+    </div>
+</div>
+{{/if}}
+{{/if}}

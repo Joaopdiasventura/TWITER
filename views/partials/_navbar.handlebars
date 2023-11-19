@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"><img class="jpplay"
+      src="https://i.pinimg.com/originals/b3/2e/3e/b32e3e7242af6d10d624ef885c3f3be5.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/login">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/registro">CADASTRE-SE</a>
+      </li>
+      {{#if user}}
+      <li class="nav-item">
+        <a class="nav-link" href="/postagens">POSTAGENS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/categorias">CATEGORIAS</a>
+      </li>
+      {{/if}}
+  </div>
+</nav>

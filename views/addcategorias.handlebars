@@ -1,0 +1,19 @@
+{{#if user}}
+{{#if user.eAdm}}
+
+<h3>NOVA CATEGORIA:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/categorias" method="post">
+            <label for="name">Nome da categoria</label>
+            <input type="text" class="form-control" name="name" id="name" required>
+            <label for="slug">Slug da categoria</label>
+            <input type="text" class="form-control" name="slug" id="slug" required>
+            <input type="submit" value="ENVIAR" class="btn btn-success mt-4">
+        </form>
+    </div>
+</div>
+
+
+{{/if}}
+{{/if}}

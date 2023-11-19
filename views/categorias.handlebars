@@ -1,0 +1,32 @@
+{{#if user}}
+    <h1>LISTA DE CATEGORIAS:</h1>
+    <hr>
+  {{#if user.eAdm}}        
+        <a href="add/categorias">
+            <button class="btn btn-success">ADICIONAR CATEGORIA</button>
+        </a>
+    {{#each categorias}}
+      <div class="card mt-4">
+        <div class="card-body">
+          <h2>{{name}}</h2>
+                    <a href="/edit/categoria/{{slug}}">
+                        <button class="btn btn-success mt-2">EDITAR CATEGORIA</button>
+                    </a>
+                    <form action="/categoria/del/{{_id}}" method="post">
+                        <input type="hidden" id="id" name="id" value="{{_id}}">
+                        <button class="btn btn-danger mt-1" type="submit">DELETAR CATEGORIA</button>
+                    </form>
+        </div>
+      </div>
+    {{/each}}
+    {{else}}
+        {{#each categorias}}
+      <div class="card mt-4">
+        <div class="card-body">
+          <h2>{{name}}</h2>
+          <a href="/categorias/{{slug}}"><button class="btn btn-info btn-lg">VER POSTAGENS SOBRE</button></a>
+        </div>
+      </div>
+    {{/each}}
+  {{/if}}
+{{/if}}

@@ -1,0 +1,45 @@
+{{#if user}}
+{{#if user.eAdm}}
+<div class="jumbotron">
+    <h1 class="display-4">BEM VINDO AO BLOG DO VULGO JP</h1>
+    <p class="display-6">{{user.name}}</p>
+    <hr>
+    <p class="lead">Esse é um projeto meu para estudar o node.js e aplicar meus conhecimentos na ferramenta e nas suas
+        bibliotecas disponiveis.</p>
+    <p class="lead"></p>
+    <p class="lead">Você que está lendo isso é um ADM então eu não preciso ficar te explicando nada.</p>
+    <hr class="my-1"> <br>
+    <a href="/logout"><button class="btn btn-primary btn-lg">LOGOUT</button></a>
+</div>
+{{else}}
+<div class="jumbotron">
+    <h1 class="display-4">BEM VINDO {{user.name}}</h1>
+    <p class="lead">TUDO BEM ?</p>
+    <hr class="my-4">
+    <p>Eu me chamo João Paulo e esse é o meu site para que faz uso da minha API criada usando node js. Esse site oferece
+        recursos de cadastro de usuarios, autenticação de e-mail entre outros. Para a construção desse projeto eu usei o
+        framework bootstrap e muitas tecnologias oferecidas para o desenvolvimento com o node.js.</p>
+    <hr class="my-4">
+    <p>Fique a vontade para olhar as postagens de diversas categorias.</p>
+    <a href="/logout"><button class="btn btn-primary btn-lg">LOGOUT</button></a>
+</div>
+{{/if}}
+{{else}}
+<div class="jumbotron">
+    <h1 class="display-4">BEM VINDO 'usuario anonimo'</h1>
+    <p class="lead">TUDO BOM ?</p>
+    <hr class="my-4">
+    <p>Eu me chamo João Paulo e esse é o meu site para que faz uso da minha API criada usando node js. Esse site oferece
+        recursos de cadastro de usuarios, autenticação de e-mail entre outros. Para a construção desse projeto eu usei o
+        framework bootstrap e muitas tecnologias oferecidas para o desenvolvimento com o node.js.</p>
+    <hr class="my-4">
+    <p>Faça login para poder ver todas as postagens de diversas categorias.</p>
+    <a href="/registro">
+        <button class="btn btn-primary btn-lg mt-4">CADASTRE-SE</button>
+    </a>
+    <br>
+    <a href="/login">
+        <button class="btn btn-primary btn-lg mt-2">BEM VINDO DE VOLTA</button>
+    </a>
+</div>
+{{/if}}

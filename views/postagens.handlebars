@@ -1,0 +1,39 @@
+{{#if user}}
+    <h1>LISTA DE POSTAGENS:</h1>
+    <hr>
+        {{#if user.eAdm}}
+        <a href="add/postagens">
+            <button class="btn btn-success">ADICIONAR POSTAGEM</button>
+        </a>
+        {{#each postagens}}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h2>{{name}}</h2>
+                    <small>{{slug}}</small> <br>
+                    <hr>
+                    <small>Publicada em: {{date}}</small> <br>
+                    <a href="/edit/postagem/{{slug}}">
+                        <button class="btn btn-success mt-2">EDITAR POSTAGEM</button>
+                    </a>
+                    <form action="/postagem/del/{{_id}}" method="post">
+                        <input type="hidden" id="id" name="id" value="{{_id}}">
+                        <button class="btn btn-danger mt-1" type="submit">DELETAR POSTAGEM</button>
+                    </form>
+                </div>
+            </div>
+        {{/each}}
+        {{else}}
+                {{#each postagens}}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4>{{name}}</h4>
+                    <small>{{slug}}</small> <br>
+                    <a href="/postagens/{{slug}}"><button class="btn btn-info mt-1">LEIA MAIS</button></a> 
+                    <hr>
+                    <small>Publicada em: {{date}}</small> <br>
+                </div>
+            </div>
+        {{/each}}
+    {{/if}}
+{{else}}
+{{/if}}
